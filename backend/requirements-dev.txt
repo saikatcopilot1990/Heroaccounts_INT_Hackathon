@@ -1,0 +1,61 @@
+#pip install -r requirements.txt
+
+# Python version
+#python>=3.13.7
+
+# Core FastAPI
+fastapi[standard]
+pydantic
+pydantic-settings
+pyjwt
+passlib[bcrypt]
+python-jose
+python-multipart
+redis[async]
+
+# Environment Variables
+python-dotenv
+
+# API Calls
+requests
+httpx
+
+# ORM
+sqlmodel
+sqlalchemy
+mysql-connector-python
+
+# Agent AI
+langchain
+langchain_community
+langchain-openai
+langchain-ollama
+IPython
+
+#Email Reading
+schedule
+python-crontab
+imapclient
+python-magic
+python-magic-bin
+filetype
+
+pytesseract 
+pillow 
+pdf2image 
+python-docx 
+PyMuPDF 
+opencv-python 
+pandas 
+python-pptx
+
+# NLP and Data Processing
+nltk
+scikit-learn
+numpy
+spacy
+textblob
+
+#chromaDB
+chromadb
+chromadb[client]
