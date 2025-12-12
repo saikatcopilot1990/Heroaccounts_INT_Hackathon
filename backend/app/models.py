@@ -85,7 +85,7 @@ class Claim(Base):
     date = Column(Date, nullable=False)
     vendor = Column(String, nullable=True)
     category = Column(String, nullable=False)
-    purpose = Column(Text, nullable=True)
+    description = Column(Text, nullable=True)
     gst_number = Column(String, nullable=True)
     
     status = Column(Enum(ClaimStatus), default=ClaimStatus.DRAFT)

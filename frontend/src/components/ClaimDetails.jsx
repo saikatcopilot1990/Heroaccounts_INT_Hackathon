@@ -20,7 +20,7 @@ export default function ClaimDetails({ receiptData, onBack, onSubmitSuccess }) {
         vendor: '',
         category: '',
         gst: '',
-        purpose: '',
+        description: '',
         employee_id: 1,
         receipt_id: undefined
     })
@@ -113,11 +113,10 @@ export default function ClaimDetails({ receiptData, onBack, onSubmitSuccess }) {
                     value={formData.gst || ''}
                     onChange={handleChange}
                 />
-
                 <label>Description</label>
                 <input
-                    name="purpose"
-                    value={formData.purpose || ''}
+                    name="description"
+                    value={formData.description || ''}
                     onChange={handleChange}
                 />
             </div>

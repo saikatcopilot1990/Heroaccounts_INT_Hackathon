@@ -7,7 +7,7 @@ class ClaimBase(BaseModel):
     date: str
     vendor: Optional[str] = None
     category: str
-    purpose: Optional[str] = None
+    description: Optional[str] = None
     gst: Optional[str] = None
 
 class ClaimCreate(ClaimBase):

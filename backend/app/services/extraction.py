@@ -10,7 +10,7 @@ from app.config import get_settings
 settings = get_settings()
 
 # os.getenv("OPENAI_settings.AI_SECRET_KEY")
-client = OpenAI(settings.AI_SECRET_KEY=settings.AI_SECRET_KEY) if settings.AI_SECRET_KEY else None
+client = OpenAI(api_key=settings.AI_SECRET_KEY) if settings.AI_SECRET_KEY else None
 
 def extract_raw_text(pdf_path):
     """Extracts raw text from a PDF file using pdfplumber."""
@@ -159,15 +159,16 @@ def receipt_to_json(pdf_path):
     raw_text = extract_raw_text(pdf_path)
     print("Raw Text Extracted:", raw_text)  # Print first 500 chars for debugging 
     # metadata = extract_receipt_metadata(raw_text)
-    
+
     keyswords = ["vendor", "amount", "date", "gst", "category","description"]
     extractor = NplEngine(keyswords)
+    print("Extractor:", extractor)
     metadata = extractor.extract(raw_text)
     print("Initial Metadata:", metadata)
     # Refine with LLM
+    
     extract_w = extract_with_llm(keyswords,json.dumps(metadata))
     print("Refined Data from LLM:", extract_w)
-    # final_data = extract_with_llm(keyswords,raw_text)
     
     return {
         "raw_text": raw_text,

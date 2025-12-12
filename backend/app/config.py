@@ -31,6 +31,7 @@ class Settings(BaseSettings):
 
     # Legacy / extra environment keys (ignored but accepted)
     secret_key: str = Field(default="replace_with_secure_value")
+    AI_SECRET_KEY: str = Field(default="")
     api_host: str = Field(default="0.0.0.0")
     api_port: int = Field(default=8000)
 

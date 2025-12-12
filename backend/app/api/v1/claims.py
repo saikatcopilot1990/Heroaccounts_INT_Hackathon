@@ -111,7 +111,7 @@ async def submit_claim(
         date=parse_date(claim_data.get("date")),
         vendor=claim_data.get("vendor"),
         category=claim_data.get("category"),
-        purpose=claim_data.get("purpose"),
+        description=claim_data.get("description"),
         gst_number=claim_data.get("gst"),
         status=ClaimStatus.SUBMITTED
     )
