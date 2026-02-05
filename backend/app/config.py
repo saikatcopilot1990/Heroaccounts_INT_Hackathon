@@ -28,6 +28,11 @@ class Settings(BaseSettings):
     smtp_port: int = Field(default=587)
     smtp_user: str = Field(default="")
     smtp_pass: str = Field(default="")
+    
+    # Email settings
+    email_format: str = Field(default="both")  # Options: "html", "text", "both"
+    app_url: str = Field(default="http://localhost:5173")  # Dashboard URL for email links
+
 
     # Legacy / extra environment keys (ignored but accepted)
     secret_key: str = Field(default="replace_with_secure_value")

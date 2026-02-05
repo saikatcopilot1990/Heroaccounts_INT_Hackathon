@@ -1,0 +1,32 @@
+============================================================
+           HERO ACCOUNTS - CLAIM STATUS UPDATE
+============================================================
+
+Hello John Doe,
+
+Your reimbursement claim has been updated.
+
+CLAIM DETAILS:
+--------------
+Claim ID:       #12345
+New Status:     APPROVED
+
+
+COMMENTS:
+All receipts verified. Payment will be processed within 2 business days.
+
+============================================================
+
+Please log in to your dashboard to view complete details and take
+any necessary actions.
+
+Dashboard: http://localhost:5173
+
+============================================================
+
+If you have any questions, please contact our support team.
+
+Regards,
+Hero Accounts Team
+
+© 2024 Hero Accounts. All rights reserved.

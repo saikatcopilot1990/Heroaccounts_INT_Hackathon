@@ -1,0 +1,36 @@
+============================================================
+        HERO ACCOUNTS - ACTION REQUIRED
+============================================================
+
+⚠️ APPROVAL NEEDED
+
+Hello Jane Manager,
+
+A new reimbursement claim has been submitted and requires your approval.
+
+CLAIM DETAILS:
+--------------
+Claim ID:       #12345
+Submitted By:   John Doe
+Amount:         ₹2,500.00
+Category:       Travel
+
+Status:         PENDING APPROVAL
+
+============================================================
+
+Please log in to the dashboard to review and approve/reject this claim
+at your earliest convenience.
+
+Dashboard: http://localhost:5173/claims/12345
+
+Direct action link: http://localhost:5173
+
+============================================================
+
+If you have any questions, please contact our support team.
+
+Regards,
+Hero Accounts Team
+
+© 2024 Hero Accounts. All rights reserved.

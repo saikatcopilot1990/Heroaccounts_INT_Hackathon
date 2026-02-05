@@ -16,19 +16,22 @@ def update_excel_ledger(claim: Claim):
     
     # Ensure directory exists
     os.makedirs(os.path.dirname(file_path), exist_ok=True)
-    
+    print(claim,"CLAIM")
     # Prepare data
     row_data = {
         "Claim ID": claim.id,
-        "Employee": claim.employee.name,
+        # "Employee": claim.employee.name,
         "Date": claim.date,
         "Amount": claim.amount,
         "Vendor": claim.vendor,
         "Category": claim.category,
-        "Purpose": claim.purpose,
+        "Description": claim.description,
         "Status": claim.status.value,
-        "Approved By": claim.approvals[-1].approver.name if claim.approvals else "N/A"
+        # "Approved By": claim.approvals[-1].approver.name if claim.approvals else "N/A"
     }
+
+
+
     
     # Check if file exists
     if not os.path.exists(file_path):
@@ -47,6 +50,7 @@ def update_excel_ledger(claim: Claim):
     else:
         # Append to existing
         try:
+            print(row_data,'Raw')
             wb = load_workbook(file_path)
             ws = wb.active
             ws.append(list(row_data.values()))

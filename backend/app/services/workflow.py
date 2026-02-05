@@ -27,6 +27,19 @@ def approve_claim(db: Session, claim_id: int, approver_id: int, comments: str = 
     if not claim or not approver:
         return False, "Claim or Approver not found."
 
+    # Check for invalid states first
+    if claim.status == ClaimStatus.DRAFT:
+        return False, "Cannot approve a draft claim. Please submit the claim first."
+    
+    if claim.status == ClaimStatus.REJECTED:
+        return False, "Cannot approve a rejected claim."
+    
+    if claim.status == ClaimStatus.APPROVED_BY_FINANCE:
+        return False, "Claim is already fully approved by Finance."
+    
+    if claim.status == ClaimStatus.PAID:
+        return False, "Claim has already been paid."
+
     # Manager Approval
     if claim.status == ClaimStatus.SUBMITTED:
         # Verify if approver is the manager
@@ -67,7 +80,9 @@ def approve_claim(db: Session, claim_id: int, approver_id: int, comments: str = 
         db.commit()
         return True, "Finance approved. Ready for payment."
 
-    return False, "Invalid state for approval."
+    # This should never be reached due to checks above, but keeping for safety
+    return False, f"Invalid state for approval. Current status: {claim.status.value}"
+
 
 def reject_claim(db: Session, claim_id: int, approver_id: int, comments: str):
     """
